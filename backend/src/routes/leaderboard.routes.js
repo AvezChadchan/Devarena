@@ -3,6 +3,6 @@ import { getGlobalLeaderboard } from "../controllers/leaderboard.controller.js";
 
 const router = Router();
 
-router.route("/get-leaderboard").get(getGlobalLeaderboard);
+router.route("/global-leaderboard").get(getGlobalLeaderboard);
 
 export default router;

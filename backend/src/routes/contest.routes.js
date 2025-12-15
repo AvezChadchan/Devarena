@@ -18,11 +18,11 @@ router.route("/get-contest-details/:id").get(getContestDetail);
 router.route("/:id/join-contest").post(verifyJWT, joinContest);
 
 router
-  .route("/:id/get-contest-participants")
+  .route("/:id/participants")
   .get(verifyJWT, authorizeRoles("admin"), getContestParticipants);
 
 router.route("/my/contests").get(verifyJWT, getUserContests);
 
-router.route("/get-contest-leaderboard/:id").get(getContestLeaderboard);
+router.route("/leaderboard/:id").get(getContestLeaderboard);
 
 export default router;

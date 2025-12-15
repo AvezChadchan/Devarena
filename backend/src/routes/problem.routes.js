@@ -12,12 +12,12 @@ import { authorizeRoles } from "../middlewares/role.middleware.js";
 const router = Router();
 
 router
-  .route("/add-problem")
+  .route("/add")
   .post(verifyJWT, authorizeRoles("admin"), addProblem);
 
-router.route("/get-problem").get(getAllProblems);
+router.route("/problem").get(getAllProblems);
 
-router.route("/get-problem/:id").get(verifyJWT, getProblemById);
+router.route("/problem/:id").get(verifyJWT, getProblemById);
 router
   .route("/update-problem/:id")
   .put(verifyJWT, authorizeRoles("admin"), updateProblem);
