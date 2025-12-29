@@ -31,9 +31,7 @@ const registerUser = asyncHandler(async (req, res) => {
   ) {
     throw new apiError(400, "All fields are required");
   }
-  if (!Object.values(ROLES).includes(role)) {
-    throw new apiError(400, "Invalid role specified");
-  }
+
   const existedUser = await User.findOne({
     $or: [{ username }, { email }],
   });
